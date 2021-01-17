@@ -95,6 +95,8 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ISqlProduct.cs" />
+    <Compile Include="Services\SqlProduct.cs" />
     <EmbeddedResource Include="CreateProduct.resx">
       <DependentUpon>CreateProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,9 +155,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
