@@ -64,6 +64,12 @@
       <DependentUpon>CreateProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\SqlConnector.cs" />
+    <Compile Include="DayAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DayAdd.Designer.cs">
+      <DependentUpon>DayAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateProduct.resx">
       <DependentUpon>CreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DayAdd.resx">
+      <DependentUpon>DayAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

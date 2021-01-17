@@ -109,8 +109,6 @@ namespace ManagerZ
 
             command.ExecuteNonQuery();
             connection.Close();
-            
-
         }
 
         private void PriceTb_TextChanged(object sender, EventArgs e)

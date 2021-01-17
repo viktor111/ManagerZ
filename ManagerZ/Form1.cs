@@ -34,5 +34,10 @@ namespace ManagerZ
             listProducts.Show();
         }
 
+        private void DayBtn_Click(object sender, EventArgs e)
+        {
+            var addDay = new DayAdd();
+            addDay.Show();
+        }
     }
 }
