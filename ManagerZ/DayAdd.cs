@@ -39,7 +39,7 @@ namespace ManagerZ
 
         private void AddBtn_Click(object sender, EventArgs e) 
         {
-            // ToDo: ADD NULL CHECK
+            // ToDo: ADD NULL CHECK !!!!!!!!!!!!!
             string productName = ProductCb.SelectedItem.ToString();
 
             Product p = sqlProduct.GetOneByName(productName);

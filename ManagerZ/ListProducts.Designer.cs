@@ -38,6 +38,11 @@ namespace ManagerZ
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.NameTxt = new System.Windows.Forms.TextBox();
             this.CategoryCb = new System.Windows.Forms.ComboBox();
+            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.managerZDataSet1 = new ManagerZ.ManagerZDataSet1();
+            this.productsTableAdapter1 = new ManagerZ.ManagerZDataSet1TableAdapters.ProductsTableAdapter();
+            this.PriceTxt = new System.Windows.Forms.TextBox();
+            this.CostTxt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,16 +50,11 @@ namespace ManagerZ
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costToMakeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.managerZDataSet1 = new ManagerZ.ManagerZDataSet1();
-            this.productsTableAdapter1 = new ManagerZ.ManagerZDataSet1TableAdapters.ProductsTableAdapter();
-            this.PriceTxt = new System.Windows.Forms.TextBox();
-            this.CostTxt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.managerZDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.managerZDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // productsBindingSource
@@ -120,6 +120,36 @@ namespace ManagerZ
             this.CategoryCb.TabIndex = 7;
             this.CategoryCb.SelectedIndexChanged += new System.EventHandler(this.CategoryCb_SelectedIndexChanged);
             // 
+            // productsBindingSource1
+            // 
+            this.productsBindingSource1.DataMember = "Products";
+            this.productsBindingSource1.DataSource = this.managerZDataSet1;
+            // 
+            // managerZDataSet1
+            // 
+            this.managerZDataSet1.DataSetName = "ManagerZDataSet1";
+            this.managerZDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // PriceTxt
+            // 
+            this.PriceTxt.Location = new System.Drawing.Point(156, 12);
+            this.PriceTxt.Name = "PriceTxt";
+            this.PriceTxt.Size = new System.Drawing.Size(100, 20);
+            this.PriceTxt.TabIndex = 9;
+            this.PriceTxt.TextChanged += new System.EventHandler(this.PriceTxt_TextChanged);
+            // 
+            // CostTxt
+            // 
+            this.CostTxt.Location = new System.Drawing.Point(389, 12);
+            this.CostTxt.Name = "CostTxt";
+            this.CostTxt.Size = new System.Drawing.Size(100, 20);
+            this.CostTxt.TabIndex = 10;
+            this.CostTxt.TextChanged += new System.EventHandler(this.CostTxt_TextChanged);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
@@ -132,11 +162,10 @@ namespace ManagerZ
             this.costToMakeDataGridViewTextBoxColumn,
             this.finalPriceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productsBindingSource1;
-            this.dataGridView1.Location = new System.Drawing.Point(49, 164);
+            this.dataGridView1.Location = new System.Drawing.Point(49, 192);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(646, 274);
-            this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Size = new System.Drawing.Size(647, 232);
+            this.dataGridView1.TabIndex = 11;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -175,45 +204,15 @@ namespace ManagerZ
             this.finalPriceDataGridViewTextBoxColumn.HeaderText = "FinalPrice";
             this.finalPriceDataGridViewTextBoxColumn.Name = "finalPriceDataGridViewTextBoxColumn";
             // 
-            // productsBindingSource1
-            // 
-            this.productsBindingSource1.DataMember = "Products";
-            this.productsBindingSource1.DataSource = this.managerZDataSet1;
-            // 
-            // managerZDataSet1
-            // 
-            this.managerZDataSet1.DataSetName = "ManagerZDataSet1";
-            this.managerZDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsTableAdapter1
-            // 
-            this.productsTableAdapter1.ClearBeforeFill = true;
-            // 
-            // PriceTxt
-            // 
-            this.PriceTxt.Location = new System.Drawing.Point(156, 12);
-            this.PriceTxt.Name = "PriceTxt";
-            this.PriceTxt.Size = new System.Drawing.Size(100, 20);
-            this.PriceTxt.TabIndex = 9;
-            this.PriceTxt.TextChanged += new System.EventHandler(this.PriceTxt_TextChanged);
-            // 
-            // CostTxt
-            // 
-            this.CostTxt.Location = new System.Drawing.Point(389, 12);
-            this.CostTxt.Name = "CostTxt";
-            this.CostTxt.Size = new System.Drawing.Size(100, 20);
-            this.CostTxt.TabIndex = 10;
-            this.CostTxt.TextChanged += new System.EventHandler(this.CostTxt_TextChanged);
-            // 
             // ListProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CostTxt);
             this.Controls.Add(this.PriceTxt);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.CategoryCb);
             this.Controls.Add(this.NameTxt);
             this.Controls.Add(this.DeleteBtn);
@@ -224,9 +223,9 @@ namespace ManagerZ
             this.Load += new System.EventHandler(this.ListProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.managerZDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.managerZDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,17 +240,17 @@ namespace ManagerZ
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.TextBox NameTxt;
         private System.Windows.Forms.ComboBox CategoryCb;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private ManagerZDataSet1 managerZDataSet1;
         private System.Windows.Forms.BindingSource productsBindingSource1;
         private ManagerZDataSet1TableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private System.Windows.Forms.TextBox PriceTxt;
+        private System.Windows.Forms.TextBox CostTxt;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costToMakeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn finalPriceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox PriceTxt;
-        private System.Windows.Forms.TextBox CostTxt;
     }
 }

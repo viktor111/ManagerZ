@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using ManagerZ.Models;
 using System.Data.SqlClient;
 using ManagerZ.Data;
+using Microsoft.Data.Sqlite;
+using System.Configuration;
 
 namespace ManagerZ
 {
@@ -98,12 +100,12 @@ namespace ManagerZ
             product.Cost = cost;
 
             SqlConnector connector = new SqlConnector();
-
-            SqlConnection connection=  connector.Connection(@"Server=.;Database=ManagerZ;Integrated Security=True");
+            string connstr = ConfigurationManager.ConnectionStrings["MsSql"].ConnectionString;
+            SqlConnection connection = connector.Connection(connstr);
 
             connection.Open();
             
-            String querry = "INSERT INTO dbo.Products(Name, Price, Category, CostToMake, FinalPrice) VALUES(@Name, @Price, @Category, @CostToMake, @FinalPrice)";
+            String querry = "INSERT INTO Products(Name, Price, Category, CostToMake, FinalPrice) VALUES(@Name, @Price, @Category, @CostToMake, @FinalPrice)";
 
             SqlCommand command = new SqlCommand(querry, connection);
             //product.FinalPrice = product.Price - product.Cost;
@@ -129,12 +131,12 @@ namespace ManagerZ
 
         private void PriceTb_TextChanged(object sender, EventArgs e)
         {
-            // ToDo: Check error handle
+            // ToDo: Check error handle !!!!!!!!!!!!!!
         }
 
         private void CostTb_TextChanged(object sender, EventArgs e)
         {
-            // ToDo: Check error handle
+            // ToDo: Check error handle !!!!!!!!!!!!!!
         }
 
     }
