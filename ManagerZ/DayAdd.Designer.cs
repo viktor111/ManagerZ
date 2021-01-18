@@ -42,6 +42,10 @@ namespace ManagerZ
             this.ProductsSoldView = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.MostSoldCategory = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.MostSoldProduct = new System.Windows.Forms.Label();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -102,7 +106,7 @@ namespace ManagerZ
             // 
             // dataGridView1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(53, 102);
             this.dataGridView1.Name = "dataGridView1";
@@ -134,15 +138,19 @@ namespace ManagerZ
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.groupBox1.Controls.Add(this.MostSoldProduct);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.MostSoldCategory);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.ProductsSoldView);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TotalMadeView);
             this.groupBox1.Controls.Add(this.TotalSpentView);
-            this.groupBox1.Location = new System.Drawing.Point(206, 337);
+            this.groupBox1.Location = new System.Drawing.Point(53, 337);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 100);
+            this.groupBox1.Size = new System.Drawing.Size(533, 100);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Today";
@@ -160,15 +168,16 @@ namespace ManagerZ
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label4.Location = new System.Drawing.Point(181, 39);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.Size = new System.Drawing.Size(72, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "ProductsSold";
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox2.Controls.Add(this.AddBtn);
             this.groupBox2.Controls.Add(this.ProductCb);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -178,6 +187,48 @@ namespace ManagerZ
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "AddProduct";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(181, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "MostSoldCategory";
+            // 
+            // MostSoldCategory
+            // 
+            this.MostSoldCategory.AutoSize = true;
+            this.MostSoldCategory.Location = new System.Drawing.Point(280, 63);
+            this.MostSoldCategory.Name = "MostSoldCategory";
+            this.MostSoldCategory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MostSoldCategory.Size = new System.Drawing.Size(33, 13);
+            this.MostSoldCategory.TabIndex = 13;
+            this.MostSoldCategory.Text = "None";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.Control;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label11.Location = new System.Drawing.Point(348, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 15);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "MostSoldProduct";
+            // 
+            // MostSoldProduct
+            // 
+            this.MostSoldProduct.AutoSize = true;
+            this.MostSoldProduct.Location = new System.Drawing.Point(454, 39);
+            this.MostSoldProduct.Name = "MostSoldProduct";
+            this.MostSoldProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MostSoldProduct.Size = new System.Drawing.Size(33, 13);
+            this.MostSoldProduct.TabIndex = 15;
+            this.MostSoldProduct.Text = "None";
             // 
             // productBindingSource
             // 
@@ -219,5 +270,9 @@ namespace ManagerZ
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label ProductsSoldView;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label MostSoldCategory;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label MostSoldProduct;
+        private System.Windows.Forms.Label label11;
     }
 }

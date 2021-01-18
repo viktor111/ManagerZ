@@ -22,7 +22,6 @@ namespace ManagerZ
 
         public DayAdd()
         {
-            
             InitializeComponent();
             List<Product> allProducts = sqlProduct.GetAll();
             foreach (Product p in allProducts)
@@ -39,24 +38,59 @@ namespace ManagerZ
 
         private void AddBtn_Click(object sender, EventArgs e) 
         {
-            // ToDo: ADD NULL CHECK !!!!!!!!!!!!!
-            string productName = ProductCb.SelectedItem.ToString();
+            if(ProductCb.SelectedItem == null)
+            {
+                MessageBox.Show("Cant be empty");
+            }
+            else
+            {
+                string productName = ProductCb.SelectedItem.ToString();
+                Product p = sqlProduct.GetOneByName(productName);
 
-            Product p = sqlProduct.GetOneByName(productName);
+                addedProducts.Add(p);
 
-            addedProducts.Add(p);
+                BindingSource source = new BindingSource();
+                source.DataSource = addedProducts;
+                dataGridView1.DataSource = source;
 
-            BindingSource source = new BindingSource();
-            source.DataSource = addedProducts;
-            dataGridView1.DataSource = source;
+                double totalEarned = Convert.ToDouble(TotalMadeView.Text) + p.FinalPrice;
+                double totalSpend = Convert.ToDouble(TotalSpentView.Text) + p.Cost;
+                int productsSold = dataGridView1.Rows.Count - 1;
 
-            double totalEarned = Convert.ToDouble(TotalMadeView.Text) + p.FinalPrice;
-            double totalSpend = Convert.ToDouble(TotalSpentView.Text) + p.Cost;
-            int productsSold = dataGridView1.Rows.Count - 1;
+                TotalMadeView.Text = totalEarned.ToString();
+                TotalSpentView.Text = totalSpend.ToString();
+                ProductsSoldView.Text = productsSold.ToString();
 
-            TotalMadeView.Text = totalEarned.ToString();
-            TotalSpentView.Text = totalSpend.ToString();
-            ProductsSoldView.Text = productsSold.ToString();
+                List<string> categoryCommon = new List<string>();
+                List<string> nameCommon = new List<string>();
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    string category = dataGridView1.Rows[i].Cells["Category"].Value.ToString();
+                    categoryCommon.Add(category);
+                }
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    string category = dataGridView1.Rows[i].Cells["Name"].Value.ToString();
+                    nameCommon.Add(category);
+                }
+
+                var mostCommonCategory = categoryCommon
+                    .GroupBy(i => i)
+                    .OrderByDescending(grp => grp
+                    .Count())
+                    .Select(grp => grp.Key)
+                    .First();
+                var mostCommonName = nameCommon
+                   .GroupBy(i => i)
+                   .OrderByDescending(grp => grp
+                   .Count())
+                   .Select(grp => grp.Key)
+                   .First();
+
+                MostSoldCategory.Text = mostCommonCategory;
+                MostSoldProduct.Text = mostCommonName;
+            }
+
         }
 
     }

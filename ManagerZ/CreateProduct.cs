@@ -20,17 +20,11 @@ namespace ManagerZ
 
         Product product = new Product();
         
-        List<string> categoriesTemp = new List<string>(); // Change to DB later
-      
         public CreateProduct()
         {
             InitializeComponent();
 
-            categoriesTemp.Add("Cake");
-            categoriesTemp.Add("Walffe");
-            categoriesTemp.Add("Dish");
-
-            CategoryComboBox.DataSource = categoriesTemp;
+            CategoryComboBox.DataSource = Enum.GetValues(typeof(Category));
         }
 
         private void NameTb_TextChanged(object sender, EventArgs e)
@@ -132,11 +126,21 @@ namespace ManagerZ
         private void PriceTb_TextChanged(object sender, EventArgs e)
         {
             // ToDo: Check error handle !!!!!!!!!!!!!!
+            if (PriceTb.Text.Contains('.'))
+            {
+                PriceTb.Text = PriceTb.Text.Replace('.', ',');
+                MessageBox.Show("Cant include . it was changed to ,");
+            }
         }
 
         private void CostTb_TextChanged(object sender, EventArgs e)
         {
             // ToDo: Check error handle !!!!!!!!!!!!!!
+            if (CostTb.Text.Contains("."))
+            {
+                CostTb.Text = PriceTb.Text.Replace('.', ',');
+                MessageBox.Show("Cant include . it was changed to ,");
+            }
         }
 
     }

@@ -19,5 +19,6 @@ namespace ManagerZ.Models
         public double Cost { get; set; }
 
         public double FinalPrice { get { return Price - Cost; } }
+   
     }
 }

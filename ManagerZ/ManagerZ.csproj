@@ -139,6 +139,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ManagerZDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Day.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
