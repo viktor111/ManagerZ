@@ -38,6 +38,10 @@ namespace ManagerZ
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.AddBtn = new System.Windows.Forms.Button();
             this.ProductViewer = new System.Windows.Forms.GroupBox();
+            this.FinalPriceFinalProduct = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.CostViewer = new System.Windows.Forms.Label();
+            this.CostFinalProduct = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,10 +53,6 @@ namespace ManagerZ
             this.MessageProduct = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.CostLabel = new System.Windows.Forms.Label();
-            this.CostFinalProduct = new System.Windows.Forms.Label();
-            this.CostViewer = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.FinalPriceFinalProduct = new System.Windows.Forms.Label();
             this.PriceTb = new System.Windows.Forms.TextBox();
             this.CostTb = new System.Windows.Forms.TextBox();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -113,6 +113,7 @@ namespace ManagerZ
             // 
             // CategoryComboBox
             // 
+            this.CategoryComboBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CategoryComboBox.FormattingEnabled = true;
             this.CategoryComboBox.Location = new System.Drawing.Point(109, 123);
             this.CategoryComboBox.Name = "CategoryComboBox";
@@ -122,13 +123,15 @@ namespace ManagerZ
             // 
             // AddBtn
             // 
+            this.AddBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.AddBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.AddBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddBtn.Location = new System.Drawing.Point(702, 12);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(75, 23);
             this.AddBtn.TabIndex = 9;
             this.AddBtn.Text = "Add";
-            this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // ProductViewer
@@ -153,9 +156,50 @@ namespace ManagerZ
             this.ProductViewer.TabStop = false;
             this.ProductViewer.Text = "Final Product";
             // 
+            // FinalPriceFinalProduct
+            // 
+            this.FinalPriceFinalProduct.AutoSize = true;
+            this.FinalPriceFinalProduct.Location = new System.Drawing.Point(180, 329);
+            this.FinalPriceFinalProduct.Name = "FinalPriceFinalProduct";
+            this.FinalPriceFinalProduct.Size = new System.Drawing.Size(16, 13);
+            this.FinalPriceFinalProduct.TabIndex = 19;
+            this.FinalPriceFinalProduct.Text = "...";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Location = new System.Drawing.Point(32, 329);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 15);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "FinalPrice";
+            // 
+            // CostViewer
+            // 
+            this.CostViewer.AutoSize = true;
+            this.CostViewer.Location = new System.Drawing.Point(180, 159);
+            this.CostViewer.Name = "CostViewer";
+            this.CostViewer.Size = new System.Drawing.Size(16, 13);
+            this.CostViewer.TabIndex = 17;
+            this.CostViewer.Text = "...";
+            // 
+            // CostFinalProduct
+            // 
+            this.CostFinalProduct.AutoSize = true;
+            this.CostFinalProduct.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.CostFinalProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CostFinalProduct.Location = new System.Drawing.Point(32, 157);
+            this.CostFinalProduct.Name = "CostFinalProduct";
+            this.CostFinalProduct.Size = new System.Drawing.Size(30, 15);
+            this.CostFinalProduct.TabIndex = 16;
+            this.CostFinalProduct.Text = "Cost";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Location = new System.Drawing.Point(32, 117);
             this.label3.Name = "label3";
@@ -166,6 +210,7 @@ namespace ManagerZ
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Location = new System.Drawing.Point(32, 74);
             this.label2.Name = "label2";
@@ -176,6 +221,7 @@ namespace ManagerZ
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label1.Location = new System.Drawing.Point(32, 29);
             this.label1.Name = "label1";
@@ -213,22 +259,27 @@ namespace ManagerZ
             // 
             // DiscardBtn
             // 
+            this.DiscardBtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DiscardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DiscardBtn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.DiscardBtn.Location = new System.Drawing.Point(702, 409);
             this.DiscardBtn.Name = "DiscardBtn";
             this.DiscardBtn.Size = new System.Drawing.Size(75, 23);
             this.DiscardBtn.TabIndex = 11;
             this.DiscardBtn.Text = "Discard";
-            this.DiscardBtn.UseVisualStyleBackColor = true;
+            this.DiscardBtn.UseVisualStyleBackColor = false;
             this.DiscardBtn.Click += new System.EventHandler(this.DiscardBtn_Click);
             // 
             // ViewProductBtn
             // 
+            this.ViewProductBtn.BackColor = System.Drawing.SystemColors.Info;
+            this.ViewProductBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ViewProductBtn.Location = new System.Drawing.Point(323, 205);
             this.ViewProductBtn.Name = "ViewProductBtn";
             this.ViewProductBtn.Size = new System.Drawing.Size(75, 23);
             this.ViewProductBtn.TabIndex = 12;
             this.ViewProductBtn.Text = "ViewProduct";
-            this.ViewProductBtn.UseVisualStyleBackColor = true;
+            this.ViewProductBtn.UseVisualStyleBackColor = false;
             this.ViewProductBtn.Click += new System.EventHandler(this.ViewProductBtn_Click);
             // 
             // MessageProduct
@@ -249,49 +300,13 @@ namespace ManagerZ
             // CostLabel
             // 
             this.CostLabel.AutoSize = true;
+            this.CostLabel.BackColor = System.Drawing.SystemColors.Menu;
             this.CostLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CostLabel.Location = new System.Drawing.Point(44, 169);
             this.CostLabel.Name = "CostLabel";
             this.CostLabel.Size = new System.Drawing.Size(30, 15);
             this.CostLabel.TabIndex = 15;
             this.CostLabel.Text = "Cost";
-            // 
-            // CostFinalProduct
-            // 
-            this.CostFinalProduct.AutoSize = true;
-            this.CostFinalProduct.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.CostFinalProduct.Location = new System.Drawing.Point(32, 157);
-            this.CostFinalProduct.Name = "CostFinalProduct";
-            this.CostFinalProduct.Size = new System.Drawing.Size(30, 15);
-            this.CostFinalProduct.TabIndex = 16;
-            this.CostFinalProduct.Text = "Cost";
-            // 
-            // CostViewer
-            // 
-            this.CostViewer.AutoSize = true;
-            this.CostViewer.Location = new System.Drawing.Point(180, 159);
-            this.CostViewer.Name = "CostViewer";
-            this.CostViewer.Size = new System.Drawing.Size(16, 13);
-            this.CostViewer.TabIndex = 17;
-            this.CostViewer.Text = "...";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 329);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "FinalPrice";
-            // 
-            // FinalPriceFinalProduct
-            // 
-            this.FinalPriceFinalProduct.AutoSize = true;
-            this.FinalPriceFinalProduct.Location = new System.Drawing.Point(180, 329);
-            this.FinalPriceFinalProduct.Name = "FinalPriceFinalProduct";
-            this.FinalPriceFinalProduct.Size = new System.Drawing.Size(16, 13);
-            this.FinalPriceFinalProduct.TabIndex = 19;
-            this.FinalPriceFinalProduct.Text = "...";
             // 
             // PriceTb
             // 
@@ -303,6 +318,7 @@ namespace ManagerZ
             // 
             // CostTb
             // 
+            this.CostTb.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.CostTb.Location = new System.Drawing.Point(109, 171);
             this.CostTb.Name = "CostTb";
             this.CostTb.Size = new System.Drawing.Size(120, 20);
@@ -317,6 +333,7 @@ namespace ManagerZ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(853, 459);
             this.Controls.Add(this.CostTb);
             this.Controls.Add(this.PriceTb);

@@ -32,20 +32,30 @@ namespace ManagerZ
             this.components = new System.ComponentModel.Container();
             this.ProductCb = new System.Windows.Forms.ComboBox();
             this.AddBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.FinalizeDayBtn = new System.Windows.Forms.Button();
+            this.TotalSpentView = new System.Windows.Forms.Label();
+            this.TotalMadeView = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ProductsSoldView = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ProductCb
             // 
+            this.ProductCb.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.ProductCb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ProductCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ProductCb.FormattingEnabled = true;
-            this.ProductCb.Location = new System.Drawing.Point(169, 31);
+            this.ProductCb.Location = new System.Drawing.Point(43, 31);
             this.ProductCb.Name = "ProductCb";
             this.ProductCb.Size = new System.Drawing.Size(121, 21);
             this.ProductCb.TabIndex = 0;
@@ -53,80 +63,144 @@ namespace ManagerZ
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(368, 29);
+            this.AddBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.AddBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddBtn.Location = new System.Drawing.Point(227, 29);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(75, 23);
             this.AddBtn.TabIndex = 1;
             this.AddBtn.Text = "Add";
-            this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "AddProduct";
             // 
             // FinalizeDayBtn
             // 
-            this.FinalizeDayBtn.Location = new System.Drawing.Point(602, 29);
+            this.FinalizeDayBtn.Location = new System.Drawing.Point(617, 392);
             this.FinalizeDayBtn.Name = "FinalizeDayBtn";
             this.FinalizeDayBtn.Size = new System.Drawing.Size(75, 23);
             this.FinalizeDayBtn.TabIndex = 4;
             this.FinalizeDayBtn.Text = "FinalizeDay";
             this.FinalizeDayBtn.UseVisualStyleBackColor = true;
             // 
+            // TotalSpentView
+            // 
+            this.TotalSpentView.AutoSize = true;
+            this.TotalSpentView.Location = new System.Drawing.Point(87, 63);
+            this.TotalSpentView.Name = "TotalSpentView";
+            this.TotalSpentView.Size = new System.Drawing.Size(28, 13);
+            this.TotalSpentView.TabIndex = 5;
+            this.TotalSpentView.Text = "0,00";
+            // 
+            // TotalMadeView
+            // 
+            this.TotalMadeView.AutoSize = true;
+            this.TotalMadeView.Location = new System.Drawing.Point(87, 37);
+            this.TotalMadeView.Name = "TotalMadeView";
+            this.TotalMadeView.Size = new System.Drawing.Size(28, 13);
+            this.TotalMadeView.TabIndex = 6;
+            this.TotalMadeView.Text = "0,00";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(53, 102);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(639, 214);
+            this.dataGridView1.TabIndex = 7;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(255, 367);
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Location = new System.Drawing.Point(6, 63);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "TotalSpent";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(407, 367);
+            this.label3.BackColor = System.Drawing.SystemColors.Control;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Location = new System.Drawing.Point(6, 37);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "TotalEarned";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.groupBox1.Controls.Add(this.ProductsSoldView);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.TotalMadeView);
+            this.groupBox1.Controls.Add(this.TotalSpentView);
+            this.groupBox1.Location = new System.Drawing.Point(206, 337);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(380, 100);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Today";
+            // 
+            // ProductsSoldView
+            // 
+            this.ProductsSoldView.AutoSize = true;
+            this.ProductsSoldView.Location = new System.Drawing.Point(277, 39);
+            this.ProductsSoldView.Name = "ProductsSoldView";
+            this.ProductsSoldView.Size = new System.Drawing.Size(13, 13);
+            this.ProductsSoldView.TabIndex = 11;
+            this.ProductsSoldView.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(181, 39);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "ProductsSold";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.groupBox2.Controls.Add(this.AddBtn);
+            this.groupBox2.Controls.Add(this.ProductCb);
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox2.Location = new System.Drawing.Point(53, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(336, 75);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "AddProduct";
             // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(ManagerZ.Models.Product);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(53, 128);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(624, 214);
-            this.dataGridView1.TabIndex = 7;
-            // 
             // DayAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(800, 449);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.FinalizeDayBtn);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.AddBtn);
-            this.Controls.Add(this.ProductCb);
             this.Name = "DayAdd";
             this.Text = "DayAdd";
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -134,11 +208,16 @@ namespace ManagerZ
 
         private System.Windows.Forms.ComboBox ProductCb;
         private System.Windows.Forms.Button AddBtn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.Button FinalizeDayBtn;
+        private System.Windows.Forms.Label TotalSpentView;
+        private System.Windows.Forms.Label TotalMadeView;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label ProductsSoldView;
+        private System.Windows.Forms.Label label4;
     }
 }

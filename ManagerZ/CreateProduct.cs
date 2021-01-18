@@ -120,9 +120,9 @@ namespace ManagerZ
             {              
                 progressBar1.Value = v;
             });
+
             
             await Task.Run(() => DoWork(progress));
-
             command.ExecuteNonQuery();
             connection.Close();
         }

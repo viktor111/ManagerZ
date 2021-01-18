@@ -39,6 +39,7 @@ namespace ManagerZ
 
         private void AddBtn_Click(object sender, EventArgs e) 
         {
+            // ToDo: ADD NULL CHECK
             string productName = ProductCb.SelectedItem.ToString();
 
             Product p = sqlProduct.GetOneByName(productName);
@@ -48,6 +49,15 @@ namespace ManagerZ
             BindingSource source = new BindingSource();
             source.DataSource = addedProducts;
             dataGridView1.DataSource = source;
+
+            double totalEarned = Convert.ToDouble(TotalMadeView.Text) + p.FinalPrice;
+            double totalSpend = Convert.ToDouble(TotalSpentView.Text) + p.Cost;
+            int productsSold = dataGridView1.Rows.Count - 1;
+
+            TotalMadeView.Text = totalEarned.ToString();
+            TotalSpentView.Text = totalSpend.ToString();
+            ProductsSoldView.Text = productsSold.ToString();
         }
+
     }
 }

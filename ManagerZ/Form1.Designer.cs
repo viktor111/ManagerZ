@@ -55,6 +55,7 @@ namespace ManagerZ
             // 
             // BtnCreate
             // 
+            this.BtnCreate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCreate.Location = new System.Drawing.Point(30, 119);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(87, 23);
@@ -65,6 +66,7 @@ namespace ManagerZ
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(30, 165);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 23);
@@ -74,6 +76,7 @@ namespace ManagerZ
             // 
             // AllProductsBtn
             // 
+            this.AllProductsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AllProductsBtn.Location = new System.Drawing.Point(30, 208);
             this.AllProductsBtn.Name = "AllProductsBtn";
             this.AllProductsBtn.Size = new System.Drawing.Size(87, 23);
@@ -84,6 +87,7 @@ namespace ManagerZ
             // 
             // DayBtn
             // 
+            this.DayBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DayBtn.Location = new System.Drawing.Point(30, 253);
             this.DayBtn.Name = "DayBtn";
             this.DayBtn.Size = new System.Drawing.Size(87, 23);
@@ -96,6 +100,7 @@ namespace ManagerZ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.DayBtn);
             this.Controls.Add(this.AllProductsBtn);

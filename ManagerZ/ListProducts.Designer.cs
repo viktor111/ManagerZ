@@ -73,6 +73,7 @@ namespace ManagerZ
             // 
             // InsertBtn
             // 
+            this.InsertBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.InsertBtn.Location = new System.Drawing.Point(49, 135);
             this.InsertBtn.Name = "InsertBtn";
             this.InsertBtn.Size = new System.Drawing.Size(75, 23);
@@ -83,6 +84,7 @@ namespace ManagerZ
             // 
             // UpdateBtn
             // 
+            this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpdateBtn.Location = new System.Drawing.Point(155, 135);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(75, 23);
@@ -93,6 +95,7 @@ namespace ManagerZ
             // 
             // DeleteBtn
             // 
+            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeleteBtn.Location = new System.Drawing.Point(270, 135);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(75, 23);
@@ -206,6 +209,7 @@ namespace ManagerZ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.CostTxt);
             this.Controls.Add(this.PriceTxt);
