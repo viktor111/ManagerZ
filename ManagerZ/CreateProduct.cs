@@ -45,11 +45,17 @@ namespace ManagerZ
 
         private void ViewProductBtn_Click(object sender, EventArgs e)
         {
+            double price = Convert.ToDouble(PriceTb.Text);
+            product.Price = price;
+
+
+            double cost = Convert.ToDouble(CostTb.Text);
+            product.Cost = cost;
             NameViewer.Text = product.Name;
             PriceVewer.Text = product.Price.ToString();
             CategoryViewer.Text = product.Category;
-            CostFinalProduct.Text = product.Cost.ToString();
-            FinalPriceFinalProduct.Text = product.FinalPrice.ToString();
+            CostViewer.Text = product.Cost.ToString();
+            FinalPriceFinalProduct.Text = (product.Price - product.Cost).ToString();
         }
 
         private void DiscardBtn_Click(object sender, EventArgs e)
@@ -60,6 +66,8 @@ namespace ManagerZ
 
             NameTb.Clear();
             PriceTb.Clear();
+            CostTb.Clear();
+            
             progressBar1.Value = 0;
             
         }
@@ -82,20 +90,28 @@ namespace ManagerZ
 
         private async void AddBtn_Click(object sender, EventArgs e)
         {
+            double price = Convert.ToDouble(PriceTb.Text);
+            product.Price = price;
+
+
+            double cost = Convert.ToDouble(CostTb.Text);
+            product.Cost = cost;
+
             SqlConnector connector = new SqlConnector();
 
             SqlConnection connection=  connector.Connection(@"Server=.;Database=ManagerZ;Integrated Security=True");
 
             connection.Open();
-
+            
             String querry = "INSERT INTO dbo.Products(Name, Price, Category, CostToMake, FinalPrice) VALUES(@Name, @Price, @Category, @CostToMake, @FinalPrice)";
+
             SqlCommand command = new SqlCommand(querry, connection);
+            //product.FinalPrice = product.Price - product.Cost;
             command.Parameters.AddWithValue("@Name", product.Name);
             command.Parameters.AddWithValue("@Price", product.Price);
             command.Parameters.AddWithValue("@Category", product.Category);
             command.Parameters.AddWithValue("@CostToMake", product.Cost);
             command.Parameters.AddWithValue("@FinalPrice", product.FinalPrice);
-
 
             progressBar1.Maximum = 100;
             progressBar1.Step = 1;
@@ -113,14 +129,12 @@ namespace ManagerZ
 
         private void PriceTb_TextChanged(object sender, EventArgs e)
         {
-            double price = Convert.ToDouble(PriceTb.Text);
-            product.Price = price;
+            // ToDo: Check error handle
         }
 
         private void CostTb_TextChanged(object sender, EventArgs e)
         {
-            double cost = Convert.ToDouble(CostTb.Text);
-            product.Cost = cost;
+            // ToDo: Check error handle
         }
 
     }

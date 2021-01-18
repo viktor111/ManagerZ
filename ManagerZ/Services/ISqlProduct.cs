@@ -10,5 +10,7 @@ namespace ManagerZ.Services
     interface ISqlProduct
     {
         List<Product> GetAll();
+
+        Product GetOneByName(string name);
     }
 }

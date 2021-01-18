@@ -18,8 +18,8 @@ namespace ManagerZ
     public partial class DayAdd : Form
     {
         SqlProduct sqlProduct = new SqlProduct();
-        
-        
+        List<Product> addedProducts = new List<Product>();
+
         public DayAdd()
         {
             
@@ -29,6 +29,7 @@ namespace ManagerZ
             {
                 ProductCb.Items.Add(p.Name);
             }
+            
         }
 
         private void ProductCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,9 +37,17 @@ namespace ManagerZ
 
         }
 
-        private void AddBtn_Click(object sender, EventArgs e)
+        private void AddBtn_Click(object sender, EventArgs e) 
         {
+            string productName = ProductCb.SelectedItem.ToString();
 
+            Product p = sqlProduct.GetOneByName(productName);
+
+            addedProducts.Add(p);
+
+            BindingSource source = new BindingSource();
+            source.DataSource = addedProducts;
+            dataGridView1.DataSource = source;
         }
     }
 }

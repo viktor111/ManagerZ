@@ -12,12 +12,12 @@ namespace ManagerZ.Models
 
         public string Name { get; set; }
 
-        public double Price { get; set; } // Where i get error
+        public double Price { get; set; }
 
         public string Category { get; set; }
 
         public double Cost { get; set; }
 
-        public double FinalPrice { get { return Price - Cost; } set { FinalPrice = Price - Cost; } }
+        public double FinalPrice { get { return Price - Cost; } }
     }
 }
