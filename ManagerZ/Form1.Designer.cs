@@ -32,9 +32,10 @@ namespace ManagerZ
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnCreate = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.AllProductsBtn = new System.Windows.Forms.Button();
             this.DayBtn = new System.Windows.Forms.Button();
+            this.ViewDayBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // treeView1
@@ -64,20 +65,10 @@ namespace ManagerZ
             this.BtnCreate.UseVisualStyleBackColor = true;
             this.BtnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(30, 165);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "NewEmployee";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // AllProductsBtn
             // 
             this.AllProductsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AllProductsBtn.Location = new System.Drawing.Point(30, 208);
+            this.AllProductsBtn.Location = new System.Drawing.Point(30, 160);
             this.AllProductsBtn.Name = "AllProductsBtn";
             this.AllProductsBtn.Size = new System.Drawing.Size(87, 23);
             this.AllProductsBtn.TabIndex = 4;
@@ -88,7 +79,7 @@ namespace ManagerZ
             // DayBtn
             // 
             this.DayBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DayBtn.Location = new System.Drawing.Point(30, 253);
+            this.DayBtn.Location = new System.Drawing.Point(30, 199);
             this.DayBtn.Name = "DayBtn";
             this.DayBtn.Size = new System.Drawing.Size(87, 23);
             this.DayBtn.TabIndex = 5;
@@ -96,15 +87,36 @@ namespace ManagerZ
             this.DayBtn.UseVisualStyleBackColor = true;
             this.DayBtn.Click += new System.EventHandler(this.DayBtn_Click);
             // 
+            // ViewDayBtn
+            // 
+            this.ViewDayBtn.Location = new System.Drawing.Point(30, 239);
+            this.ViewDayBtn.Name = "ViewDayBtn";
+            this.ViewDayBtn.Size = new System.Drawing.Size(87, 23);
+            this.ViewDayBtn.TabIndex = 6;
+            this.ViewDayBtn.Text = "ViewDay";
+            this.ViewDayBtn.UseVisualStyleBackColor = true;
+            this.ViewDayBtn.Click += new System.EventHandler(this.ViewDayBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(30, 278);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Calculator";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ViewDayBtn);
             this.Controls.Add(this.DayBtn);
             this.Controls.Add(this.AllProductsBtn);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.treeView1);
@@ -120,9 +132,10 @@ namespace ManagerZ
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnCreate;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button AllProductsBtn;
         private System.Windows.Forms.Button DayBtn;
+        private System.Windows.Forms.Button ViewDayBtn;
+        private System.Windows.Forms.Button button1;
     }
 }
 

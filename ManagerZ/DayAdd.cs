@@ -19,6 +19,7 @@ namespace ManagerZ
     {
         SqlProduct sqlProduct = new SqlProduct();
         List<Product> addedProducts = new List<Product>();
+        DayModel day = new DayModel();
 
         public DayAdd()
         {
@@ -28,7 +29,7 @@ namespace ManagerZ
             {
                 ProductCb.Items.Add(p.Name);
             }
-            
+            Date.Text = day.Date.ToString("MM/dd/yyyy");
         }
 
         private void ProductCb_SelectedIndexChanged(object sender, EventArgs e)
@@ -93,5 +94,79 @@ namespace ManagerZ
 
         }
 
+        private void Calculate(int i)
+        {
+            double pow = Math.Pow(i, i);
+        }
+
+        public void DoWork(IProgress<int> progress)
+        {
+            for (int j = 0; j < 100000; j++)
+            {
+                Calculate(j);
+
+                if (progress != null)
+                    progress.Report((j + 1) * 100 / 100000);
+            }
+        }
+
+        private async void FinalizeDayBtn_Click(object sender, EventArgs e)
+        {
+
+            double totalEarned = Convert.ToDouble(TotalMadeView.Text);
+            double totalSpend = Convert.ToDouble(TotalSpentView.Text);
+            int productsSold = dataGridView1.Rows.Count - 1;
+
+
+            List<string> categoryCommon = new List<string>();
+            List<string> nameCommon = new List<string>();
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                string category = dataGridView1.Rows[i].Cells["Category"].Value.ToString();
+                categoryCommon.Add(category);
+            }
+            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            {
+                string category = dataGridView1.Rows[i].Cells["Name"].Value.ToString();
+                nameCommon.Add(category);
+            }
+
+            var mostCommonCategory = categoryCommon
+                .GroupBy(i => i)
+                .OrderByDescending(grp => grp
+                .Count())
+                .Select(grp => grp.Key)
+                .First();
+            var mostCommonName = nameCommon
+               .GroupBy(i => i)
+               .OrderByDescending(grp => grp
+               .Count())
+               .Select(grp => grp.Key)
+               .First();
+
+            MostSoldCategory.Text = mostCommonCategory;
+            MostSoldProduct.Text = mostCommonName;
+
+            day.MostCommonCategory = mostCommonCategory;
+            day.MostCommonProduct = mostCommonName;
+            day.SoldProductsCount = productsSold;
+            day.TotalMade = totalEarned;
+            day.TotalSpent = totalSpend;
+
+            SqlDay sqlDay = new SqlDay();
+
+
+            progressBar1.Maximum = 100;
+            progressBar1.Step = 1;
+
+            var progress = new Progress<int>(v =>
+            {
+                progressBar1.Value = v;
+            });
+
+
+            await Task.Run(() => DoWork(progress));
+            sqlDay.SaveDay(day);
+        }
     }
 }

@@ -2,6 +2,7 @@
 using ManagerZ.Models;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,14 @@ namespace ManagerZ.Services
     {
         SqlConnector connector = new SqlConnector();
 
+        string connstr = ConfigurationManager.ConnectionStrings["MsSqlIp"].ConnectionString;
+
         public List<Product> GetAll()
         {
             List<Product> AllProducts = new List<Product>();
+            
 
-            SqlConnection connection = connector.Connection(@"Server=.;Database=ManagerZ;Integrated Security=True");
+            SqlConnection connection = connector.Connection(connstr);
 
             String querry = "SELECT * FROM dbo.Products";
             SqlCommand command = new SqlCommand(querry, connection);
@@ -42,7 +46,7 @@ namespace ManagerZ.Services
 
         public Product GetOneByName(string name)
         {
-            SqlConnection connection = connector.Connection(@"Server=.;Database=ManagerZ;Integrated Security=True");
+            SqlConnection connection = connector.Connection(connstr);
             Product product = new Product();
             String querry = "SELECT * FROM dbo.Products WHERE Name=@Name";
             SqlCommand command = new SqlCommand(querry, connection);

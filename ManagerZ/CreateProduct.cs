@@ -94,7 +94,7 @@ namespace ManagerZ
             product.Cost = cost;
 
             SqlConnector connector = new SqlConnector();
-            string connstr = ConfigurationManager.ConnectionStrings["MsSql"].ConnectionString;
+            string connstr = ConfigurationManager.ConnectionStrings["MsSqlIp"].ConnectionString;
             SqlConnection connection = connector.Connection(connstr);
 
             connection.Open();

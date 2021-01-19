@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ManagerZ.Models
 {
-    class Day
+    class DayModel
     {
         public int Id { get; set; }
 

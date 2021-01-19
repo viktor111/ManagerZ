@@ -46,6 +46,9 @@ namespace ManagerZ
             this.MostSoldCategory = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.MostSoldProduct = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Date = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -85,6 +88,7 @@ namespace ManagerZ
             this.FinalizeDayBtn.TabIndex = 4;
             this.FinalizeDayBtn.Text = "FinalizeDay";
             this.FinalizeDayBtn.UseVisualStyleBackColor = true;
+            this.FinalizeDayBtn.Click += new System.EventHandler(this.FinalizeDayBtn_Click);
             // 
             // TotalSpentView
             // 
@@ -138,6 +142,8 @@ namespace ManagerZ
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.Info;
+            this.groupBox1.Controls.Add(this.Date);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.MostSoldProduct);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.MostSoldCategory);
@@ -230,6 +236,34 @@ namespace ManagerZ
             this.MostSoldProduct.TabIndex = 15;
             this.MostSoldProduct.Text = "None";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5.Location = new System.Drawing.Point(348, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Date";
+            // 
+            // Date
+            // 
+            this.Date.AutoSize = true;
+            this.Date.Location = new System.Drawing.Point(396, 65);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(33, 13);
+            this.Date.TabIndex = 17;
+            this.Date.Text = "None";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(617, 421);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 12;
+            // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(ManagerZ.Models.Product);
@@ -240,6 +274,7 @@ namespace ManagerZ
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(800, 449);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -274,5 +309,8 @@ namespace ManagerZ
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label MostSoldProduct;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label Date;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

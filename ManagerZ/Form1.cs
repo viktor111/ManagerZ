@@ -39,5 +39,17 @@ namespace ManagerZ
             var addDay = new DayAdd();
             addDay.Show();
         }
+
+        private void ViewDayBtn_Click(object sender, EventArgs e)
+        {
+            var viewDay = new ViewDay();
+            viewDay.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var incomeCalc = new IncomeCalc();
+            incomeCalc.Show();
+        }
     }
 }
