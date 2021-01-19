@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace ManagerZ
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            label3.Text = DateTime.Now.ToString("MMMM-dd-yyyy");
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,6 +54,11 @@ namespace ManagerZ
         {
             var incomeCalc = new IncomeCalc();
             incomeCalc.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }

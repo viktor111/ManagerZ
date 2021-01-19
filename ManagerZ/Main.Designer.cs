@@ -1,7 +1,7 @@
 ﻿
 namespace ManagerZ
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,8 @@ namespace ManagerZ
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnCreate = new System.Windows.Forms.Button();
@@ -36,11 +38,14 @@ namespace ManagerZ
             this.DayBtn = new System.Windows.Forms.Button();
             this.ViewDayBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(12, 105);
+            this.treeView1.Location = new System.Drawing.Point(62, 106);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(130, 333);
             this.treeView1.TabIndex = 0;
@@ -48,7 +53,7 @@ namespace ManagerZ
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 86);
+            this.label1.Location = new System.Drawing.Point(59, 90);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 1;
@@ -57,7 +62,7 @@ namespace ManagerZ
             // BtnCreate
             // 
             this.BtnCreate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCreate.Location = new System.Drawing.Point(30, 119);
+            this.BtnCreate.Location = new System.Drawing.Point(83, 122);
             this.BtnCreate.Name = "BtnCreate";
             this.BtnCreate.Size = new System.Drawing.Size(87, 23);
             this.BtnCreate.TabIndex = 2;
@@ -68,7 +73,7 @@ namespace ManagerZ
             // AllProductsBtn
             // 
             this.AllProductsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AllProductsBtn.Location = new System.Drawing.Point(30, 160);
+            this.AllProductsBtn.Location = new System.Drawing.Point(83, 161);
             this.AllProductsBtn.Name = "AllProductsBtn";
             this.AllProductsBtn.Size = new System.Drawing.Size(87, 23);
             this.AllProductsBtn.TabIndex = 4;
@@ -79,7 +84,7 @@ namespace ManagerZ
             // DayBtn
             // 
             this.DayBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DayBtn.Location = new System.Drawing.Point(30, 199);
+            this.DayBtn.Location = new System.Drawing.Point(83, 200);
             this.DayBtn.Name = "DayBtn";
             this.DayBtn.Size = new System.Drawing.Size(87, 23);
             this.DayBtn.TabIndex = 5;
@@ -89,7 +94,7 @@ namespace ManagerZ
             // 
             // ViewDayBtn
             // 
-            this.ViewDayBtn.Location = new System.Drawing.Point(30, 239);
+            this.ViewDayBtn.Location = new System.Drawing.Point(83, 240);
             this.ViewDayBtn.Name = "ViewDayBtn";
             this.ViewDayBtn.Size = new System.Drawing.Size(87, 23);
             this.ViewDayBtn.TabIndex = 6;
@@ -99,7 +104,7 @@ namespace ManagerZ
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(30, 278);
+            this.button1.Location = new System.Drawing.Point(83, 278);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 23);
             this.button1.TabIndex = 7;
@@ -107,12 +112,40 @@ namespace ManagerZ
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Menu;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 15);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "...";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.Menu;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Location = new System.Drawing.Point(174, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(18, 15);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "...";
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(267, 471);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ViewDayBtn);
             this.Controls.Add(this.DayBtn);
@@ -120,8 +153,9 @@ namespace ManagerZ
             this.Controls.Add(this.BtnCreate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.treeView1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Main";
+            this.Text = "Main";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,6 +170,9 @@ namespace ManagerZ
         private System.Windows.Forms.Button DayBtn;
         private System.Windows.Forms.Button ViewDayBtn;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

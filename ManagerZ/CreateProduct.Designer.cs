@@ -30,6 +30,7 @@ namespace ManagerZ
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateProduct));
             this.listView1 = new System.Windows.Forms.ListView();
             this.NameLabel = new System.Windows.Forms.Label();
             this.NameTb = new System.Windows.Forms.TextBox();
@@ -56,6 +57,7 @@ namespace ManagerZ
             this.PriceTb = new System.Windows.Forms.TextBox();
             this.CostTb = new System.Windows.Forms.TextBox();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.ProductViewer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -329,6 +331,10 @@ namespace ManagerZ
             // 
             this.productBindingSource.DataSource = typeof(ManagerZ.Models.Product);
             // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
+            // 
             // CreateProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,6 +356,7 @@ namespace ManagerZ
             this.Controls.Add(this.NameTb);
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.listView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreateProduct";
             this.Text = "CreateProduct";
             this.ProductViewer.ResumeLayout(false);
@@ -388,5 +395,6 @@ namespace ManagerZ
         private System.Windows.Forms.Label CostLabel;
         private System.Windows.Forms.TextBox PriceTb;
         private System.Windows.Forms.TextBox CostTb;
+        private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

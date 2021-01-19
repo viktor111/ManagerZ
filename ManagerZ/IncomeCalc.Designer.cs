@@ -29,6 +29,7 @@ namespace ManagerZ
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IncomeCalc));
             this.BeginDtp = new System.Windows.Forms.DateTimePicker();
             this.EndDtp = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,6 +46,8 @@ namespace ManagerZ
             this.label7 = new System.Windows.Forms.Label();
             this.TotalMadeView = new System.Windows.Forms.Label();
             this.TotalSpentView = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +108,7 @@ namespace ManagerZ
             this.groupBox1.Controls.Add(this.TotalSpentView);
             this.groupBox1.Location = new System.Drawing.Point(15, 138);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(533, 100);
+            this.groupBox1.Size = new System.Drawing.Size(529, 100);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Income";
@@ -212,17 +215,40 @@ namespace ManagerZ
             this.TotalSpentView.TabIndex = 5;
             this.TotalSpentView.Text = "0,00";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(469, 67);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Print";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 304);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "label5";
+            // 
             // IncomeCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 450);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(563, 403);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.StartCalcBtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.EndDtp);
             this.Controls.Add(this.BeginDtp);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "IncomeCalc";
             this.Text = "IncomeCalc";
             this.groupBox1.ResumeLayout(false);
@@ -250,5 +276,7 @@ namespace ManagerZ
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label TotalMadeView;
         private System.Windows.Forms.Label TotalSpentView;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
     }
 }

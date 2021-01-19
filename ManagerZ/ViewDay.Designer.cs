@@ -29,6 +29,7 @@ namespace ManagerZ
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewDay));
             this.label1 = new System.Windows.Forms.Label();
             this.ViewDayBtn = new System.Windows.Forms.Button();
             this.DeleteDayBtn = new System.Windows.Forms.Button();
@@ -93,7 +94,7 @@ namespace ManagerZ
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.TotalMadeView);
             this.groupBox1.Controls.Add(this.TotalSpentView);
-            this.groupBox1.Location = new System.Drawing.Point(112, 159);
+            this.groupBox1.Location = new System.Drawing.Point(118, 108);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(533, 100);
             this.groupBox1.TabIndex = 11;
@@ -234,12 +235,14 @@ namespace ManagerZ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(773, 252);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DeleteDayBtn);
             this.Controls.Add(this.ViewDayBtn);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewDay";
             this.Text = "ViewDay";
             this.groupBox1.ResumeLayout(false);

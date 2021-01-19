@@ -30,6 +30,7 @@ namespace ManagerZ
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DayAdd));
             this.ProductCb = new System.Windows.Forms.ComboBox();
             this.AddBtn = new System.Windows.Forms.Button();
             this.FinalizeDayBtn = new System.Windows.Forms.Button();
@@ -39,15 +40,15 @@ namespace ManagerZ
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Date = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.MostSoldProduct = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.MostSoldCategory = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.ProductsSoldView = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.MostSoldCategory = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.MostSoldProduct = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.Date = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -82,7 +83,7 @@ namespace ManagerZ
             // 
             // FinalizeDayBtn
             // 
-            this.FinalizeDayBtn.Location = new System.Drawing.Point(617, 392);
+            this.FinalizeDayBtn.Location = new System.Drawing.Point(617, 376);
             this.FinalizeDayBtn.Name = "FinalizeDayBtn";
             this.FinalizeDayBtn.Size = new System.Drawing.Size(75, 23);
             this.FinalizeDayBtn.TabIndex = 4;
@@ -161,6 +162,69 @@ namespace ManagerZ
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Today";
             // 
+            // Date
+            // 
+            this.Date.AutoSize = true;
+            this.Date.Location = new System.Drawing.Point(396, 65);
+            this.Date.Name = "Date";
+            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Date.Size = new System.Drawing.Size(33, 13);
+            this.Date.TabIndex = 17;
+            this.Date.Text = "None";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5.Location = new System.Drawing.Point(348, 62);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Date";
+            // 
+            // MostSoldProduct
+            // 
+            this.MostSoldProduct.AutoSize = true;
+            this.MostSoldProduct.Location = new System.Drawing.Point(454, 39);
+            this.MostSoldProduct.Name = "MostSoldProduct";
+            this.MostSoldProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MostSoldProduct.Size = new System.Drawing.Size(33, 13);
+            this.MostSoldProduct.TabIndex = 15;
+            this.MostSoldProduct.Text = "None";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.Control;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label11.Location = new System.Drawing.Point(348, 37);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 15);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "MostSoldProduct";
+            // 
+            // MostSoldCategory
+            // 
+            this.MostSoldCategory.AutoSize = true;
+            this.MostSoldCategory.Location = new System.Drawing.Point(280, 63);
+            this.MostSoldCategory.Name = "MostSoldCategory";
+            this.MostSoldCategory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.MostSoldCategory.Size = new System.Drawing.Size(33, 13);
+            this.MostSoldCategory.TabIndex = 13;
+            this.MostSoldCategory.Text = "None";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(181, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "MostSoldCategory";
+            // 
             // ProductsSoldView
             // 
             this.ProductsSoldView.AutoSize = true;
@@ -194,72 +258,9 @@ namespace ManagerZ
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "AddProduct";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(181, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 15);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "MostSoldCategory";
-            // 
-            // MostSoldCategory
-            // 
-            this.MostSoldCategory.AutoSize = true;
-            this.MostSoldCategory.Location = new System.Drawing.Point(280, 63);
-            this.MostSoldCategory.Name = "MostSoldCategory";
-            this.MostSoldCategory.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.MostSoldCategory.Size = new System.Drawing.Size(33, 13);
-            this.MostSoldCategory.TabIndex = 13;
-            this.MostSoldCategory.Text = "None";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.SystemColors.Control;
-            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label11.Location = new System.Drawing.Point(348, 37);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 15);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "MostSoldProduct";
-            // 
-            // MostSoldProduct
-            // 
-            this.MostSoldProduct.AutoSize = true;
-            this.MostSoldProduct.Location = new System.Drawing.Point(454, 39);
-            this.MostSoldProduct.Name = "MostSoldProduct";
-            this.MostSoldProduct.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.MostSoldProduct.Size = new System.Drawing.Size(33, 13);
-            this.MostSoldProduct.TabIndex = 15;
-            this.MostSoldProduct.Text = "None";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(348, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 15);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Date";
-            // 
-            // Date
-            // 
-            this.Date.AutoSize = true;
-            this.Date.Location = new System.Drawing.Point(396, 65);
-            this.Date.Name = "Date";
-            this.Date.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Date.Size = new System.Drawing.Size(33, 13);
-            this.Date.TabIndex = 17;
-            this.Date.Text = "None";
-            // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(617, 421);
+            this.progressBar1.Location = new System.Drawing.Point(617, 414);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(100, 23);
             this.progressBar1.TabIndex = 12;
@@ -279,6 +280,7 @@ namespace ManagerZ
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.FinalizeDayBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DayAdd";
             this.Text = "DayAdd";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

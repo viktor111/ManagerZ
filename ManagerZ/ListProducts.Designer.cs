@@ -30,6 +30,7 @@ namespace ManagerZ
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListProducts));
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.managerZDataSet = new ManagerZ.ManagerZDataSet();
             this.productsTableAdapter = new ManagerZ.ManagerZDataSetTableAdapters.ProductsTableAdapter();
@@ -219,6 +220,7 @@ namespace ManagerZ
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.InsertBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListProducts";
             this.Text = "ListProducts";
             this.Load += new System.EventHandler(this.ListProducts_Load);
