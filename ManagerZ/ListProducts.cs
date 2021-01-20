@@ -16,10 +16,6 @@ namespace ManagerZ
 {
     public partial class ListProducts : Form
     {
-        int id;
-        Product product = new Product();
-        SqlConnection con = new SqlConnection(@"Server=.;Database=ManagerZ;Integrated Security=True");
-        SqlDataAdapter adapt;
         
         public ListProducts()
         {
