@@ -12,5 +12,7 @@ namespace ManagerZ.Services
         List<Product> GetAll();
 
         Product GetOneByName(string name);
+
+        string UpdateById(int id, string propertyToUpdate, string data);
     }
 }

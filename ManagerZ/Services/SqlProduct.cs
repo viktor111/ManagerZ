@@ -67,5 +67,18 @@ namespace ManagerZ.Services
             }
             return product;
         }
+
+        public string UpdateById(int id, string propertyToUpdate, string data)
+        {
+            SqlConnection connection = connector.Connection(connstr);
+            string querry = $"UPDATE Products SET {propertyToUpdate} = @data WHERE Id = {id}";
+            SqlCommand command = new SqlCommand(querry, connection);
+            command.Parameters.AddWithValue("@data", data);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+
+            return propertyToUpdate;
+        }
     }
 }

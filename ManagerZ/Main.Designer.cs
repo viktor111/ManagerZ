@@ -132,7 +132,7 @@ namespace ManagerZ
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Menu;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(174, 9);
+            this.label3.Location = new System.Drawing.Point(164, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(18, 15);
             this.label3.TabIndex = 9;

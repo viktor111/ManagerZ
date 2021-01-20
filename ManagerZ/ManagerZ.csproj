@@ -241,6 +241,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ManagerZDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ManagerZDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ManagerZDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DayModel.cs" />
     <Compile Include="Models\MLDayPredict.cs" />
@@ -309,6 +314,17 @@
     </None>
     <None Include="ManagerZDataSet1.xss">
       <DependentUpon>ManagerZDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ManagerZDataSet2.xsc">
+      <DependentUpon>ManagerZDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ManagerZDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ManagerZDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ManagerZDataSet2.xss">
+      <DependentUpon>ManagerZDataSet2.xsd</DependentUpon>
     </None>
     <None Include="ManagerZ_TemporaryKey.pfx" />
     <None Include="packages.config" />
