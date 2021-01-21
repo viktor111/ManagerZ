@@ -35,8 +35,8 @@
     <ProductName>ManagerZ</ProductName>
     <PublisherName>Viktor Draganov</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>9</ApplicationRevision>
-    <ApplicationVersion>1.1.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.2.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -206,6 +206,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllProducts.Designer.cs">
+      <DependentUpon>AllProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ControlExtensions.cs" />
     <Compile Include="CreateProduct.cs">
       <SubType>Form</SubType>
@@ -232,27 +238,6 @@
     <Compile Include="IncomeCalc.Designer.cs">
       <DependentUpon>IncomeCalc.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListProducts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListProducts.Designer.cs">
-      <DependentUpon>ListProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerZDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ManagerZDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerZDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ManagerZDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ManagerZDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ManagerZDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\DayModel.cs" />
     <Compile Include="Models\MLDayPredict.cs" />
@@ -269,6 +254,9 @@
     <Compile Include="ViewDay.Designer.cs">
       <DependentUpon>ViewDay.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AllProducts.resx">
+      <DependentUpon>AllProducts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateProduct.resx">
       <DependentUpon>CreateProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -280,9 +268,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IncomeCalc.resx">
       <DependentUpon>IncomeCalc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ListProducts.resx">
-      <DependentUpon>ListProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -300,39 +285,6 @@
     <EmbeddedResource Include="ViewDay.resx">
       <DependentUpon>ViewDay.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ManagerZDataSet.xsc">
-      <DependentUpon>ManagerZDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ManagerZDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ManagerZDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ManagerZDataSet.xss">
-      <DependentUpon>ManagerZDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ManagerZDataSet1.xsc">
-      <DependentUpon>ManagerZDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="ManagerZDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ManagerZDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ManagerZDataSet1.xss">
-      <DependentUpon>ManagerZDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="ManagerZDataSet2.xsc">
-      <DependentUpon>ManagerZDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="ManagerZDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ManagerZDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ManagerZDataSet2.xss">
-      <DependentUpon>ManagerZDataSet2.xsd</DependentUpon>
-    </None>
     <None Include="ManagerZ_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ManagerZ.Models.Product.datasource" />

@@ -118,7 +118,7 @@ namespace ManagerZ
             SqlDay sqlDay = new SqlDay();
 
             DayModel dayChek = sqlDay.GetOneByDate(day.Date.ToString("yyyy - MM - dd"));
-            if (dayChek != null)
+            if (dayChek.Id != 0)
             {
                 dayExist = true;
             }

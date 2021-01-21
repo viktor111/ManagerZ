@@ -28,7 +28,7 @@ namespace ManagerZ
 
         private void AllProductsBtn_Click(object sender, EventArgs e)
         {
-            var listProducts = new ListProducts();
+            var listProducts = new AllProducts();
             listProducts.Show();
         }
 

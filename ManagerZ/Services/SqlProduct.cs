@@ -3,6 +3,7 @@ using ManagerZ.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,12 @@ namespace ManagerZ.Services
 
         string connstr = ConfigurationManager.ConnectionStrings["MsSqlIp"].ConnectionString;
 
+
+
         public List<Product> GetAll()
         {
             List<Product> AllProducts = new List<Product>();
             
-
             SqlConnection connection = connector.Connection(connstr);
 
             String querry = "SELECT * FROM dbo.Products";
@@ -42,6 +44,23 @@ namespace ManagerZ.Services
                 connection.Close();
             }
             return AllProducts;
+        }
+
+        public DataTable GetAllDataAdapter()
+        {
+
+            SqlConnection con = new SqlConnection(connstr);
+
+            SqlCommand sqlCmd = new SqlCommand();
+            sqlCmd.Connection = con;
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "Select * from Products";
+            SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
+
+            DataTable dtRecord = new DataTable();
+            sqlDataAdap.Fill(dtRecord);
+
+            return dtRecord;
         }
 
         public Product GetOneByName(string name)
