@@ -104,8 +104,6 @@ namespace ManagerZ
 
             int startX = 10;
             int startY = 10;
-            int offset = 40;
-
             string beginDt = BeginDtp.Value.ToString("yyyy - MM - dd");
             string endDt = EndDtp.Value.ToString("yyyy - MM - dd");
 

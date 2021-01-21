@@ -53,15 +53,17 @@ namespace ManagerZ
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(115, 64);
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(7, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(58, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "SelectDay";
             // 
             // ViewDayBtn
             // 
-            this.ViewDayBtn.Location = new System.Drawing.Point(417, 54);
+            this.ViewDayBtn.Location = new System.Drawing.Point(277, 15);
             this.ViewDayBtn.Name = "ViewDayBtn";
             this.ViewDayBtn.Size = new System.Drawing.Size(75, 23);
             this.ViewDayBtn.TabIndex = 2;
@@ -71,7 +73,7 @@ namespace ManagerZ
             // 
             // DeleteDayBtn
             // 
-            this.DeleteDayBtn.Location = new System.Drawing.Point(521, 54);
+            this.DeleteDayBtn.Location = new System.Drawing.Point(358, 15);
             this.DeleteDayBtn.Name = "DeleteDayBtn";
             this.DeleteDayBtn.Size = new System.Drawing.Size(75, 23);
             this.DeleteDayBtn.TabIndex = 3;
@@ -94,7 +96,7 @@ namespace ManagerZ
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.TotalMadeView);
             this.groupBox1.Controls.Add(this.TotalSpentView);
-            this.groupBox1.Location = new System.Drawing.Point(118, 108);
+            this.groupBox1.Location = new System.Drawing.Point(12, 72);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(533, 100);
             this.groupBox1.TabIndex = 11;
@@ -226,7 +228,7 @@ namespace ManagerZ
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(188, 57);
+            this.dateTimePicker1.Location = new System.Drawing.Point(71, 15);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 15;
@@ -236,7 +238,7 @@ namespace ManagerZ
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(773, 252);
+            this.ClientSize = new System.Drawing.Size(570, 205);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.DeleteDayBtn);

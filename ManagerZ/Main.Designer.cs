@@ -47,7 +47,7 @@ namespace ManagerZ
             // 
             this.treeView1.Location = new System.Drawing.Point(62, 106);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(130, 333);
+            this.treeView1.Size = new System.Drawing.Size(130, 291);
             this.treeView1.TabIndex = 0;
             // 
             // label1
@@ -143,7 +143,7 @@ namespace ManagerZ
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(267, 471);
+            this.ClientSize = new System.Drawing.Size(267, 420);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
