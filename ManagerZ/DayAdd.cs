@@ -168,40 +168,43 @@ namespace ManagerZ
                 day.SoldProductsCount = productsSold;
                 day.TotalMade = totalEarned;
                 day.TotalSpent = totalSpend;
+
+
+                progressBar1.Maximum = 100;
+                progressBar1.Step = 1;
+
+                var progress = new Progress<int>(v =>
+                {
+                    progressBar1.Value = v;
+                });
+
+
+                await Task.Run(() => DoWork(progress));
+
+                if (!dayExist)
+                {
+                    sqlDay.SaveDay(day);
+                }
+                else
+                {
+
+                    DayModel newDay = new DayModel();
+                    newDay.Id = dayChek.Id;
+                    newDay.TotalMade = dayChek.TotalMade + day.TotalMade;
+                    newDay.TotalSpent = dayChek.TotalSpent + day.TotalSpent;
+                    newDay.SoldProductsCount = dayChek.SoldProductsCount + day.SoldProductsCount;
+                    newDay.MostCommonProduct = dayChek.MostCommonProduct;
+                    newDay.MostCommonCategory = dayChek.MostCommonCategory;
+
+                    sqlDay.Update(newDay);
+                }
             }
             catch (InvalidOperationException)
             {
                 MessageBox.Show("Add products!");
             }
 
-            progressBar1.Maximum = 100;
-            progressBar1.Step = 1;
-
-            var progress = new Progress<int>(v =>
-            {
-                progressBar1.Value = v;
-            });
-
-
-            await Task.Run(() => DoWork(progress));
-
-            if (!dayExist)
-            {
-                sqlDay.SaveDay(day);
-            }
-            else
-            {
-
-                DayModel newDay = new DayModel();
-                newDay.Id = dayChek.Id;
-                newDay.TotalMade = dayChek.TotalMade + day.TotalMade;
-                newDay.TotalSpent = dayChek.TotalSpent + day.TotalSpent;
-                newDay.SoldProductsCount = dayChek.SoldProductsCount + day.SoldProductsCount;
-                newDay.MostCommonProduct = dayChek.MostCommonProduct;
-                newDay.MostCommonCategory = dayChek.MostCommonCategory;
-
-                sqlDay.Update(newDay);
-            }
+            
 
         }
     }
