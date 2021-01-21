@@ -125,22 +125,53 @@ namespace ManagerZ
 
         private void PriceTb_TextChanged(object sender, EventArgs e)
         {
-            // ToDo: Check error handle !!!!!!!!!!!!!!
-            if (PriceTb.Text.Contains('.'))
+            try
             {
-                PriceTb.Text = PriceTb.Text.Replace('.', ',');
-                MessageBox.Show("Cant include . it was changed to ,");
+                char c = char.Parse(PriceTb.Text);
+
+                if (c == '.')
+                {
+                    PriceTb.Text = PriceTb.Text.Replace('.', ',');
+                    MessageBox.Show("Cant include . it was changed to ,");
+                }
+                if (Char.IsLetter(c))
+                {
+                    PriceTb.Text = PriceTb.Text.Replace(c, '\0');
+                    MessageBox.Show("Cant include letters!");
+                }
             }
+            catch (FormatException)
+            {
+                
+            }
+            
+
+            
         }
 
         private void CostTb_TextChanged(object sender, EventArgs e)
         {
-            // ToDo: Check error handle !!!!!!!!!!!!!!
-            if (CostTb.Text.Contains("."))
+            try
             {
-                CostTb.Text = PriceTb.Text.Replace('.', ',');
-                MessageBox.Show("Cant include . it was changed to ,");
+                char c = char.Parse(CostTb.Text);
+                if (CostTb.Text.Contains("."))
+                {
+                    CostTb.Text = CostTb.Text.Replace('.', ',');
+                    MessageBox.Show("Cant include . it was changed to ,");
+                }
+
+                if (Char.IsLetter(c))
+                {
+                    CostTb.Text = CostTb.Text.Replace(c, '\0');
+                    MessageBox.Show("Cant include letters!");
+                }
             }
+            catch (FormatException)
+            {
+
+            }
+            
+           
         }
 
     }
