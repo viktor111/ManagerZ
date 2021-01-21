@@ -14,5 +14,7 @@ namespace ManagerZ.Services
         DayModel GetOneByDate(string date);
 
         void DeleteOneByDate(string date);
+
+        DayModel Update(DayModel day);
     }
 }

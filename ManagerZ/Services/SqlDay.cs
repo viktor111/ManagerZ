@@ -78,6 +78,25 @@ namespace ManagerZ.Services
             connection.Close();
 
             return day;
-        }      
+        }
+
+        public DayModel Update(DayModel day)
+        {
+            SqlConnection connection = connector.Connection(connstr);
+            string querry = $"UPDATE Days SET TotalMade = @TotalMade, TotalSpent = @TotalSpent, SoldProductsCount = @SoldProductsCount, MostCommonProduct = @MostCommonProduct, MostCommonCategory = @MostCommonCategory, Date = @Date WHERE Id = {day.Id}";
+            SqlCommand command = new SqlCommand(querry, connection);
+            command.Parameters.AddWithValue("@TotalMade", day.TotalMade);
+            command.Parameters.AddWithValue("@TotalSpent", day.TotalSpent);
+            command.Parameters.AddWithValue("@SoldProductsCount", day.SoldProductsCount);
+            command.Parameters.AddWithValue("@MostCommonProduct", day.MostCommonProduct);
+            command.Parameters.AddWithValue("@MostCommonCategory", day.MostCommonCategory);
+            command.Parameters.AddWithValue("@Date", day.Date);
+
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+
+            return day;
+        }
     }
 }

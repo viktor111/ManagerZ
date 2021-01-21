@@ -113,6 +113,17 @@ namespace ManagerZ
         private async void FinalizeDayBtn_Click(object sender, EventArgs e)
         {
 
+            bool dayExist = false;
+
+            SqlDay sqlDay = new SqlDay();
+
+            DayModel dayChek = sqlDay.GetOneByDate(day.Date.ToString("yyyy - MM - dd"));
+            if (dayChek != null)
+            {
+                dayExist = true;
+            }
+
+
             double totalEarned = Convert.ToDouble(TotalMadeView.Text);
             double totalSpend = Convert.ToDouble(TotalSpentView.Text);
             int productsSold = dataGridView1.Rows.Count - 1;
@@ -153,9 +164,6 @@ namespace ManagerZ
             day.TotalMade = totalEarned;
             day.TotalSpent = totalSpend;
 
-            SqlDay sqlDay = new SqlDay();
-
-
             progressBar1.Maximum = 100;
             progressBar1.Step = 1;
 
@@ -166,7 +174,25 @@ namespace ManagerZ
 
 
             await Task.Run(() => DoWork(progress));
-            sqlDay.SaveDay(day);
+
+            if (!dayExist)
+            {
+                sqlDay.SaveDay(day);
+            }
+            else
+            {
+
+                DayModel newDay = new DayModel();
+                newDay.Id = dayChek.Id;
+                newDay.TotalMade = dayChek.TotalMade + day.TotalMade;
+                newDay.TotalSpent = dayChek.TotalSpent + day.TotalSpent;
+                newDay.SoldProductsCount = dayChek.SoldProductsCount + day.SoldProductsCount;
+                newDay.MostCommonProduct = dayChek.MostCommonProduct;
+                newDay.MostCommonCategory = dayChek.MostCommonCategory;
+
+                sqlDay.Update(newDay);
+            }
+
         }
     }
 }
