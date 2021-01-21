@@ -35,7 +35,7 @@
     <ProductName>ManagerZ</ProductName>
     <PublisherName>Viktor Draganov</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.2.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -212,7 +212,6 @@
     <Compile Include="AllProducts.Designer.cs">
       <DependentUpon>AllProducts.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\ControlExtensions.cs" />
     <Compile Include="CreateProduct.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -41,17 +41,26 @@ namespace ManagerZ
 
         private void ViewProductBtn_Click(object sender, EventArgs e)
         {
-            double price = Convert.ToDouble(PriceTb.Text);
-            product.Price = price;
+            try
+            {
+                double price = Convert.ToDouble(PriceTb.Text);
+                product.Price = price;
 
 
-            double cost = Convert.ToDouble(CostTb.Text);
-            product.Cost = cost;
-            NameViewer.Text = product.Name;
-            PriceVewer.Text = product.Price.ToString();
-            CategoryViewer.Text = product.Category;
-            CostViewer.Text = product.Cost.ToString();
-            FinalPriceFinalProduct.Text = (product.Price - product.Cost).ToString();
+                double cost = Convert.ToDouble(CostTb.Text);
+                product.Cost = cost;
+                NameViewer.Text = product.Name;
+                PriceVewer.Text = product.Price.ToString();
+                CategoryViewer.Text = product.Category;
+                CostViewer.Text = product.Cost.ToString();
+                FinalPriceFinalProduct.Text = (product.Price - product.Cost).ToString();
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("Cant be empty");
+            }
+
+            
         }
 
         private void DiscardBtn_Click(object sender, EventArgs e)

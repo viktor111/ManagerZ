@@ -142,27 +142,37 @@ namespace ManagerZ
                 nameCommon.Add(category);
             }
 
-            var mostCommonCategory = categoryCommon
+
+            try
+            {
+                var mostCommonCategory = categoryCommon
                 .GroupBy(i => i)
                 .OrderByDescending(grp => grp
                 .Count())
                 .Select(grp => grp.Key)
                 .First();
-            var mostCommonName = nameCommon
-               .GroupBy(i => i)
-               .OrderByDescending(grp => grp
-               .Count())
-               .Select(grp => grp.Key)
-               .First();
 
-            MostSoldCategory.Text = mostCommonCategory;
-            MostSoldProduct.Text = mostCommonName;
+                var mostCommonName = nameCommon
+                .GroupBy(i => i)
+                .OrderByDescending(grp => grp
+                .Count())
+                .Select(grp => grp.Key)
+                .First();
 
-            day.MostCommonCategory = mostCommonCategory;
-            day.MostCommonProduct = mostCommonName;
-            day.SoldProductsCount = productsSold;
-            day.TotalMade = totalEarned;
-            day.TotalSpent = totalSpend;
+
+                MostSoldCategory.Text = mostCommonCategory;
+                MostSoldProduct.Text = mostCommonName;
+
+                day.MostCommonCategory = mostCommonCategory;
+                day.MostCommonProduct = mostCommonName;
+                day.SoldProductsCount = productsSold;
+                day.TotalMade = totalEarned;
+                day.TotalSpent = totalSpend;
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("Add products!");
+            }
 
             progressBar1.Maximum = 100;
             progressBar1.Step = 1;
