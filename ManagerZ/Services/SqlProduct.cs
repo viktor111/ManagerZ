@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ManagerZ.Services
 {
@@ -89,13 +90,20 @@ namespace ManagerZ.Services
 
         public string UpdateById(int id, string propertyToUpdate, string data)
         {
-            SqlConnection connection = connector.Connection(connstr);
-            string querry = $"UPDATE Products SET {propertyToUpdate} = @data WHERE Id = {id}";
-            SqlCommand command = new SqlCommand(querry, connection);
-            command.Parameters.AddWithValue("@data", data);
-            connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
+            if(data == "")
+            {
+                MessageBox.Show("Please input something!");
+            }
+            else
+            {
+                SqlConnection connection = connector.Connection(connstr);
+                string querry = $"UPDATE Products SET {propertyToUpdate} = @data WHERE Id = {id}";
+                SqlCommand command = new SqlCommand(querry, connection);
+                command.Parameters.AddWithValue("@data", data);
+                connection.Open();
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
 
             return propertyToUpdate;
         }
