@@ -41,6 +41,10 @@ namespace ManagerZ
 
         private void ViewProductBtn_Click(object sender, EventArgs e)
         {
+
+            PriceTb.Text = PriceTb.Text.Replace(',', '.');
+            CostTb.Text = CostTb.Text.Replace(',', '.');
+
             try
             {
                 double price = Convert.ToDouble(PriceTb.Text);
@@ -59,8 +63,6 @@ namespace ManagerZ
             {
                 MessageBox.Show("Cant be empty");
             }
-
-            
         }
 
         private void DiscardBtn_Click(object sender, EventArgs e)
@@ -68,13 +70,14 @@ namespace ManagerZ
             NameViewer.Text = "...";
             PriceVewer.Text = "...";
             CategoryViewer.Text = "...";
+            CostViewer.Text = "...";
+            FinalPriceFinalProduct.Text = "...";
 
             NameTb.Clear();
             PriceTb.Clear();
             CostTb.Clear();
             
             progressBar1.Value = 0;
-            
         }
 
         private void Calculate(int i)
@@ -95,41 +98,52 @@ namespace ManagerZ
 
         private async void AddBtn_Click(object sender, EventArgs e)
         {
-            double price = Convert.ToDouble(PriceTb.Text);
-            product.Price = price;
+            try
+            {
+                PriceTb.Text = PriceTb.Text.Replace(',', '.');
+                CostTb.Text = CostTb.Text.Replace(',', '.');
 
 
-            double cost = Convert.ToDouble(CostTb.Text);
-            product.Cost = cost;
+                double price = Convert.ToDouble(PriceTb.Text);
+                product.Price = price;
 
-            SqlConnector connector = new SqlConnector();
-            string connstr = ConfigurationManager.ConnectionStrings["MsSqlIp"].ConnectionString;
-            SqlConnection connection = connector.Connection(connstr);
 
-            connection.Open();
-            
-            String querry = "INSERT INTO Products(Name, Price, Category, CostToMake, FinalPrice) VALUES(@Name, @Price, @Category, @CostToMake, @FinalPrice)";
+                double cost = Convert.ToDouble(CostTb.Text);
+                product.Cost = cost;
 
-            SqlCommand command = new SqlCommand(querry, connection);
-            //product.FinalPrice = product.Price - product.Cost;
-            command.Parameters.AddWithValue("@Name", product.Name);
-            command.Parameters.AddWithValue("@Price", product.Price);
-            command.Parameters.AddWithValue("@Category", product.Category);
-            command.Parameters.AddWithValue("@CostToMake", product.Cost);
-            command.Parameters.AddWithValue("@FinalPrice", product.FinalPrice);
+                SqlConnector connector = new SqlConnector();
+                string connstr = ConfigurationManager.ConnectionStrings["MsSqlIp"].ConnectionString;
+                SqlConnection connection = connector.Connection(connstr);
 
-            progressBar1.Maximum = 100;
-            progressBar1.Step = 1;
+                connection.Open();
 
-            var progress = new Progress<int>(v =>
-            {              
-                progressBar1.Value = v;
-            });
+                String querry = "INSERT INTO Products(Name, Price, Category, CostToMake, FinalPrice) VALUES(@Name, @Price, @Category, @CostToMake, @FinalPrice)";
 
-            
-            await Task.Run(() => DoWork(progress));
-            command.ExecuteNonQuery();
-            connection.Close();
+                SqlCommand command = new SqlCommand(querry, connection);
+                //product.FinalPrice = product.Price - product.Cost;
+                command.Parameters.AddWithValue("@Name", product.Name);
+                command.Parameters.AddWithValue("@Price", product.Price);
+                command.Parameters.AddWithValue("@Category", product.Category);
+                command.Parameters.AddWithValue("@CostToMake", product.Cost);
+                command.Parameters.AddWithValue("@FinalPrice", product.FinalPrice);
+
+                progressBar1.Maximum = 100;
+                progressBar1.Step = 1;
+
+                var progress = new Progress<int>(v =>
+                {
+                    progressBar1.Value = v;
+                });
+
+
+                await Task.Run(() => DoWork(progress));
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Cant be empty");
+            }
         }
 
         private void PriceTb_TextChanged(object sender, EventArgs e)
@@ -153,9 +167,6 @@ namespace ManagerZ
             {
                 
             }
-            
-
-            
         }
 
         private void CostTb_TextChanged(object sender, EventArgs e)

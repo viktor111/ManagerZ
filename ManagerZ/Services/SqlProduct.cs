@@ -18,8 +18,6 @@ namespace ManagerZ.Services
 
         string connstr = ConfigurationManager.ConnectionStrings["MsSqlIp"].ConnectionString;
 
-
-
         public List<Product> GetAll()
         {
             List<Product> AllProducts = new List<Product>();

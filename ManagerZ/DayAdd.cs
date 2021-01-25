@@ -123,7 +123,6 @@ namespace ManagerZ
                 dayExist = true;
             }
 
-
             double totalEarned = Convert.ToDouble(TotalMadeView.Text);
             double totalSpend = Convert.ToDouble(TotalSpentView.Text);
             int productsSold = dataGridView1.Rows.Count - 1;
