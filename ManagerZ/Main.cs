@@ -54,5 +54,10 @@ namespace ManagerZ
             label2.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var incomeCalc = new Form1();
+            incomeCalc.Show();
+        }
     }
 }
