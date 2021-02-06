@@ -33,8 +33,8 @@ namespace ManagerZ
             DateTime beginDt = BeginDtp.Value;
             DateTime endDt = EndDtp.Value;
 
-            double totalMade = 0;
-            double totalSpent = 0;
+            decimal totalMade = 0;
+            decimal totalSpent = 0;
             int totalProductsSold = 0;
            
 

@@ -12,10 +12,10 @@ namespace ManagerZ.Models
         public int Id { get; set; }
 
         [LoadColumn(0)]
-        public double TotalMade { get; set; }
+        public decimal TotalMade { get; set; }
 
         [LoadColumn(1)]
-        public double TotalSpent { get; set; }
+        public decimal TotalSpent { get; set; }
 
         [LoadColumn(2)]
         [ColumnName("Features")]

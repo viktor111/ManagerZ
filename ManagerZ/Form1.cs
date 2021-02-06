@@ -34,5 +34,20 @@ namespace ManagerZ
 
             dataGridView1.DataSource = da;
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView datagridView1 = (DataGridView)sender;
+            int rowIndexEdited = e.RowIndex;
+            string id = dataGridView1.Rows[rowIndexEdited].Cells[0].Value.ToString();
+
+            var formDetails = new OrderDetails(id);
+            formDetails.Show();
+        }
     }
 }

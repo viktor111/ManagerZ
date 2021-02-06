@@ -43,8 +43,8 @@ namespace ManagerZ.Services
                 while (sqlDataReader.Read())
                 {
                     day.Id = Convert.ToInt32(sqlDataReader["Id"]);
-                    day.TotalMade = Convert.ToDouble(sqlDataReader["TotalMade"]);
-                    day.TotalSpent = Convert.ToDouble(sqlDataReader["TotalSpent"]);
+                    day.TotalMade = Convert.ToDecimal(sqlDataReader["TotalMade"]);
+                    day.TotalSpent = Convert.ToDecimal(sqlDataReader["TotalSpent"]);
                     day.SoldProductsCount = Convert.ToInt32(sqlDataReader["SoldProductsCount"]);
                     day.MostCommonCategory = sqlDataReader["MostCommonCategory"].ToString();
                     day.MostCommonProduct = sqlDataReader["MostCommonProduct"].ToString();                  
